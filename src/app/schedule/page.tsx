@@ -34,14 +34,14 @@ export default function SchedulePage() {
                 <tr className="bg-cream-100">
                   <th className="p-4 text-left font-montserrat text-stone-900 border-none border-b-0"></th>
                   <th className="p-4 text-left font-montserrat text-stone-900">Time</th>
-                  {DAYS.map(day => (
+                  {DAYS.map((day: string) => (
                     <th key={day} className="p-4 text-center font-montserrat text-stone-900">{day}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {Object.entries(SCHEDULE).map(([period, times], periodIndex) => (
-                  Object.entries(times).map(([time, classes], timeIndex) => (
+                  Object.entries(times).map(([time, classes]: [string, Record<string, string>], timeIndex) => (
                     <tr key={`${period}-${time}`} className="border-t border-stone-200">
                       {timeIndex === 0 && (
                         <td
@@ -52,7 +52,7 @@ export default function SchedulePage() {
                         </td>
                       )}
                       <td className="p-4 font-medium text-stone-900">{time}</td>
-                      {DAYS.map(day => (
+                      {DAYS.map((day: string)=> (
                         <td key={day} className="p-4 text-center text-stone-500">
                           {classes[day]}
                         </td>
