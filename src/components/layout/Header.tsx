@@ -39,6 +39,7 @@ export function Header({ onMenuClick }: HeaderProps) {
               <line x1="3" y1="18" x2="21" y2="18" />
             </svg>
           </Button>
+          <div className="hidden lg:block w-[107px]">
 
           {/* Logo */}
           <Logo />
